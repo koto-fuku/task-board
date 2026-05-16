@@ -2,7 +2,21 @@
 
 ## Project Overview
 
-タスク管理ボードアプリケーション。
+React + TypeScript + Vite で構築したタスク管理ボードアプリケーション。
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite 8
+
+## Development
+
+```bash
+npm install    # 依存関係インストール
+npm run dev    # 開発サーバー起動
+npm run build  # プロダクションビルド
+```
 
 ## Git Operation Rules
 
@@ -45,6 +59,6 @@ fix: タスク削除時にUIが更新されない問題を修正
 
 ## Development Guidelines
 
-- コミット前にビルドエラーがないことを確認する
-- 機密情報（APIキー、パスワード等）は絶対にコミットしない（`.env` ファイルは `.gitignore` に含める）
-- 不要なファイル（`node_modules`、ビルド成果物等）はコミットしない
+- コミット前にビルドエラーがないことを確認する（`npm run build`）
+- 機密情報（APIキー、パスワード等）は絶対にコミットしない（`.env` は `.gitignore` に含める）
+- `node_modules/` や `dist/` はコミットしない
