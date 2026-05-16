@@ -6,9 +6,46 @@ React + TypeScript + Vite で構築したタスク管理ボードアプリケー
 
 ## Tech Stack
 
-- React 19
-- TypeScript
-- Vite 8
+| カテゴリ | 技術 | バージョン |
+|---|---|---|
+| UIライブラリ | React | ^19.2 |
+| 言語 | TypeScript | ~6.0 |
+| ビルドツール | Vite | ^8.0 |
+| スタイリング | Plain CSS | — |
+| 状態管理 | React useState / useEffect | — |
+| 永続化 | localStorage | — |
+| デプロイ | GitHub Pages / GitHub Actions | — |
+
+外部UIライブラリ・CSSフレームワークは使用しない。
+
+## Deploy
+
+- 本番URL: **https://koto-fuku.github.io/task-board/**
+- `main` ブランチへのプッシュで GitHub Actions が自動ビルド＆デプロイ
+- ワークフロー: [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
+
+## Component Naming Conventions
+
+### ファイル・コンポーネント名
+
+- コンポーネントファイルは **PascalCase** — `App.tsx`, `TaskList.tsx`, `TaskItem.tsx`
+- コンポーネント関数も **PascalCase** — `export default function TaskItem() {}`
+- 1ファイル1コンポーネントを基本とする
+
+### 型・インターフェース
+
+- 型エイリアスは **PascalCase** — `type Task = { ... }`
+
+### 変数・関数
+
+- 変数・関数は **camelCase** — `addTask`, `toggleTask`, `deleteTask`
+- 定数（変化しない値）は **UPPER_SNAKE_CASE** — `const STORAGE_KEY = 'tasks'`
+- イベントハンドラは `handle` プレフィックス — `handleKeyDown`, `handleSubmit`
+
+### CSSクラス名
+
+- **kebab-case** — `.task-list`, `.task-text`, `.input-row`
+- 状態修飾は単一クラスで付与 — `<li className={task.done ? 'task done' : 'task'}>`
 
 ## Development
 
